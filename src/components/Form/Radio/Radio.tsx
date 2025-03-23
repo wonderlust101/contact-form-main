@@ -8,13 +8,14 @@ type RadioType = {
     required?: boolean;
 }
 
-type RadioItemType = InputHTMLAttributes<HTMLInputElement> & {
+type RadioItemType = InputHTMLAttributes<HTMLInputElement>&{
     children?: ReactNode;
     value: string;
+    index: number;
     props?: InputHTMLAttributes<HTMLInputElement>
 }
 
-export default function Radio({children, label, error, required }: RadioType) {
+export default function Radio({children, label, error, required}: RadioType) {
     return (
         <div className="radio">
             <p>{label} <span className="text-input__required">{required ? "*" : ""}</span></p>
@@ -23,17 +24,16 @@ export default function Radio({children, label, error, required }: RadioType) {
                 {children}
             </div>
 
-            {error && <p className='text-input__error'>{error}</p>}
+            {error && <p className="text-input__error">{error}</p>}
         </div>
     );
 }
 
-Radio.Item = function Radio({children, value, ...props}: RadioItemType) {
+Radio.Item = function Radio({children, value, index, ...props}: RadioItemType) {
     return (
-        <label htmlFor={props.name} className="radio__label">
+        <label id={props?.name ? props.name + index : index.toString()} className="radio__label">
             {children}
             <input
-                id={props.name}
                 className="radio__input"
                 type="radio"
                 value={value}

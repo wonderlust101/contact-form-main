@@ -69,8 +69,8 @@ export default function ContactForm() {
                     <TextInput label="Email Address" error={errors.email?.message} required {...register("email")}/>
 
                     <Radio label="Query Type" error={errors.queryType?.message} required>
-                        {queryType.map((item) => (
-                            <Radio.Item key={item} {...register("queryType")} value={item}>{item}</Radio.Item>
+                        {queryType.map((item, index) => (
+                            <Radio.Item key={index} index={index} {...register("queryType")} value={item}>{item}</Radio.Item>
                         ))}
                     </Radio>
 
