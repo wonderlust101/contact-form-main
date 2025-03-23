@@ -1,0 +1,38 @@
+.contact-form {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-height: 100vh;
+  background-color: $clr-primary-color-green-200;
+
+  @include breakpoint(small) {
+    align-content: center;
+  }
+
+  &__form {
+    display: grid;
+    gap: 2.5rem;
+    margin: 2rem 0;
+    padding: 2.5rem;
+    width: calc(100% - (1rem *2));
+    background-color: $clr-white;
+    border-radius: 1rem;
+
+    @include breakpoint(small) {
+      width: calc(100% - (2.5rem *2));
+    }
+
+    @include breakpoint(medium) {
+      width: min(100%, 46rem);
+    }
+  }
+
+  &__form-row {
+    display: grid;
+    gap: 1.5rem;
+
+    @include breakpoint(small) {
+      grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    }
+  }
+}

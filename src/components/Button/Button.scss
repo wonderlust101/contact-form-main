@@ -1,0 +1,17 @@
+.button {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+
+  &--green {
+    color: $clr-white;
+    background-color: $clr-primary-color-green-600;
+
+    &:hover {
+      background-color: $clr-primary-color-green-900;
+      cursor: pointer;
+    }
+  }
+}

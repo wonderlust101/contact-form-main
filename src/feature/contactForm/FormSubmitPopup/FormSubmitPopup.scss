@@ -1,0 +1,19 @@
+.form-submit-popup {
+  display: grid;
+  gap: 0.5rem;
+  position: absolute;
+  top: 1.5rem;
+  width: min(100% - (1.5rem * 2), 28rem);
+  padding: 1.5rem;
+  color: $clr-white;
+  background: $clr-grey-900;
+  border-radius: 0.75rem;
+  transform: translatex(-50%);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+  }
+}

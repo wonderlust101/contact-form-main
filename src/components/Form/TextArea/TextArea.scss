@@ -1,0 +1,33 @@
+.text-area {
+  display: grid;
+  gap: 0.5rem;
+
+  &__required {
+    color: $clr-primary-color-green-600;
+  }
+
+  &__input {
+    all: unset;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid $clr-grey-500;
+    border-radius: 0.5rem;
+    transition: border-color 200ms ease;
+
+    &--error {
+      border: 2px solid $clr-primary-color-red;
+
+      &:hover,
+      &:focus {
+        border: 2px solid $clr-primary-color-red !important;
+      }
+    }
+
+    &:hover {
+      border: 2px solid $clr-primary-color-green-600;
+    }
+
+    &:focus {
+      border: 2px solid $clr-primary-color-green-600;
+    }
+  }
+}
