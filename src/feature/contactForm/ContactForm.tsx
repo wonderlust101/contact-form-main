@@ -70,14 +70,13 @@ export default function ContactForm() {
 
                     <Radio label="Query Type" error={errors.queryType?.message} required>
                         {queryType.map((item) => (
-                            <Radio.Item key={item} {...register("queryType")} name="queryType" value={item}>{item}</Radio.Item>
+                            <Radio.Item key={item} {...register("queryType")} value={item}>{item}</Radio.Item>
                         ))}
                     </Radio>
 
                     <TextArea label="Message" error={errors.message?.message} required {...register("message")}/>
 
                     <Checkbox
-                        id='consent'
                         value="Consented"
                         label="I consent to being contacted by the team"
                         error={errors.consent?.message}

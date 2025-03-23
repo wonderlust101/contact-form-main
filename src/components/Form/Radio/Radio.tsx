@@ -30,9 +30,10 @@ export default function Radio({children, label, error, required }: RadioType) {
 
 Radio.Item = function Radio({children, value, ...props}: RadioItemType) {
     return (
-        <label className="radio__label">
+        <label htmlFor={props.name} className="radio__label">
             {children}
             <input
+                id={props.name}
                 className="radio__input"
                 type="radio"
                 value={value}

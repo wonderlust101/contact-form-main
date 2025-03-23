@@ -4,7 +4,6 @@ import "./Checkbox.scss";
 type CheckboxType = InputHTMLAttributes<HTMLInputElement>&{
     label: string;
     value: string;
-    id: string;
     required?: boolean;
     error?: string;
     props?: InputHTMLAttributes<HTMLInputElement>;
@@ -14,9 +13,15 @@ export default function Checkbox({label, value, id, required, error, ...props}: 
     return (
         <div className="checkbox">
             <div className="checkbox__container">
-                <input id={id} className="checkbox__input" type="checkbox" value={value} {...props} />
+                <input
+                    id={props.name}
+                    className="checkbox__input"
+                    type="checkbox"
+                    value={value}
+                    {...props}
+                />
 
-                <label htmlFor={id}>
+                <label htmlFor={props.name}>
                     {label} <span className="checkbox__required">{required ? "*" : ""}</span>
                 </label>
             </div>
